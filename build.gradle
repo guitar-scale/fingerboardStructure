@@ -7,7 +7,6 @@
  */
 
 plugins {
-    // Apply the java-library plugin to add support for Java Library
     id 'java-library'
     id 'eclipse'
 }
@@ -17,6 +16,10 @@ repositories {
 }
 
 dependencies {
-    // Use JUnit test framework
     testImplementation 'junit:junit:4.13.1'
+}
+
+javadoc {
+    title = "GuitarScale"
+    source = sourceSets.main.allJava
 }

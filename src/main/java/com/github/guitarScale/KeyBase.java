@@ -1,8 +1,16 @@
 package com.github.guitarScale;
 
+/**
+ * Represents the base keys in music.
+ */
 public enum KeyBase {
   E, FSharp, F, G, GSharp, A, ASharp, B, C, CSharp, D, DSharp;
 
+  /**
+   * Returns a string representation of the key.
+   *
+   * @return a string representation of the key
+   */
   @Override
   public String toString() {
     switch(this) {
@@ -22,6 +30,13 @@ public enum KeyBase {
     }
   }
 
+  /**
+   * Returns the KeyBase corresponding to the specified string.
+   *
+   * @param key a string representing a key
+   * @return the KeyBase corresponding to the specified string
+   * @throws IllegalArgumentException if the specified string does not represent a valid key
+   */
   public static KeyBase fromString(String key) {
     switch(key) {
       case "E": return E;
@@ -40,10 +55,21 @@ public enum KeyBase {
     }
   }
 
+  /**
+   * Returns an integer representation of the key.
+   *
+   * @return an integer representation of the key
+   */
   public int toInt() {
     return this.ordinal();
   }
 
+  /**
+   * Returns the KeyBase corresponding to the specified integer.
+   *
+   * @param key an integer representing a key
+   * @return the KeyBase corresponding to the specified integer
+   */
   public static KeyBase fromInt(int key) {
     return KeyBase.values()[key];
   }

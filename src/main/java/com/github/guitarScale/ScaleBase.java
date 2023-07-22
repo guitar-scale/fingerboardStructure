@@ -2,6 +2,9 @@ package com.github.guitarScale;
 
 import java.util.Arrays;
 
+/**
+ * Represents the base scales.
+ */
 public enum ScaleBase {
 	MitsuruMetal(new int[]{2, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1}),
 	Aeolian(new int[]{2, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0}),
@@ -38,14 +41,29 @@ public enum ScaleBase {
 
 	private final int[] structure;
 
+	/**
+	 * Constructs a ScaleBase with the specified structure.
+	 *
+	 * @param structure an array representing the structure of the scale
+	 */
 	ScaleBase(int[] structure) {
 		this.structure = structure;
 	}
 
+	/**
+	 * Returns the structure of the scale.
+	 *
+	 * @return an array representing the structure of the scale
+	 */
 	public int[] getStructure() {
 		return this.structure;
 	}
 
+	/**
+	 * Returns a string representation of the scale.
+	 *
+	 * @return a string representation of the scale
+	 */
 	@Override
 	public String toString() {
 		return name() + " " + Arrays.toString(structure);
