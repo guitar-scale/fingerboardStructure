@@ -1,5 +1,7 @@
 package com.github.guitarScale;
 
+import java.util.Arrays;
+
 /**
  * Represents a guitar fingerboard.
  * <p>
@@ -27,8 +29,6 @@ package com.github.guitarScale;
 public class FingerBoard {
 
   private int[][] fretboard;
-
-  private FingerBoard() {}
 
   /**
    * Constructs a FingerBoard with the specified number of frets, key base, scale name, and tuning.
@@ -79,14 +79,31 @@ public class FingerBoard {
   public String toString() {
     StringBuilder sb = new StringBuilder();
 
-    for (int string = 0; string < 6; string++) {
-      for (int fret = 0; fret < 24; fret++) {
-        sb.append(fretboard[string][fret]).append(" ");
+    for (int string = 0; string < fretboard.length; string++) {
+      for (int fret = 0; fret < fretboard[0].length; fret++) {
+        sb.append(fretboard[string][fret]).append(", ");
       }
       sb.append("\n");
     }
 
     return sb.toString();
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) {
+      return true;
+    }
+    if (obj == null || getClass() != obj.getClass()) {
+      return false;
+    }
+    FingerBoard that = (FingerBoard) obj;
+    return Arrays.deepEquals(fretboard, that.fretboard);
+  }
+
+  @Override
+  public int hashCode() {
+    return Arrays.deepHashCode(fretboard);
   }
 
 }

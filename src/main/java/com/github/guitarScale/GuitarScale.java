@@ -8,10 +8,10 @@ public class GuitarScale {
     FingerBoard fb = new FingerBoard(
         24,
         KeyBase.A,
-				ScaleBase.Minor,
+				ScaleBase.Major,
         new Tuning( // or Tuning.getStandardTuning();
             new int[]{
-                KeyBase.fromString("E").toInt(),
+                KeyBase.fromString("D").toInt(),
                 KeyBase.fromString("A").toInt(),
                 KeyBase.fromString("D").toInt(),
                 KeyBase.fromString("G").toInt(),
