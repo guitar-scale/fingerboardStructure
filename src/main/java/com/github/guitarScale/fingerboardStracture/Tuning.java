@@ -1,10 +1,12 @@
-package com.github.guitarScale;
+package com.github.guitarScale.fingerboardStracture;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
 /**
- * Represents the tuning of a guitar.
+ * Represents the tuning of a guitar.<br>
+ * Arguments for each method start with the 6th bow,<br>
+ * but the retained index name and string name are the same.
  */
 public class Tuning {
   private int[] tuning;
@@ -19,6 +21,11 @@ public class Tuning {
     if (tuning.length != 6) {
       throw new IllegalArgumentException("Tuning must consist of 6 notes.");
     }
+    for(int i = 0; i < tuning.length / 2; i++) {
+      int temp = tuning[i];
+      tuning[i] = tuning[tuning.length - i - 1];
+      tuning[tuning.length - i - 1] = temp;
+    }
     this.tuning = tuning;
   }
 
@@ -27,7 +34,7 @@ public class Tuning {
    *
    * @return an array of integers representing the tuning of the guitar
    */
-  public int[] getTuning() {
+  public int[] getTuningStructure() {
     return this.tuning;
   }
 

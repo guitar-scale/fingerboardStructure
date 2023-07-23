@@ -1,4 +1,4 @@
-package com.github.guitarScale;
+package com.github.guitarScale.fingerboardStracture;
 
 import org.junit.Test;
 
@@ -55,41 +55,41 @@ public class KeyBaseTest {
 
   @Test
   public void testToInt() {
-    assertEquals(0, KeyBase.E.toInt());
-    assertEquals(1, KeyBase.FSharp.toInt());
-    assertEquals(2, KeyBase.F.toInt());
-    assertEquals(3, KeyBase.G.toInt());
-    assertEquals(4, KeyBase.GSharp.toInt());
-    assertEquals(5, KeyBase.A.toInt());
-    assertEquals(6, KeyBase.ASharp.toInt());
-    assertEquals(7, KeyBase.B.toInt());
-    assertEquals(8, KeyBase.C.toInt());
-    assertEquals(9, KeyBase.CSharp.toInt());
-    assertEquals(10, KeyBase.D.toInt());
-    assertEquals(11, KeyBase.DSharp.toInt());
+    assertEquals(0, KeyBase.C.toInt());
+    assertEquals(1, KeyBase.CSharp.toInt());
+    assertEquals(2, KeyBase.D.toInt());
+    assertEquals(3, KeyBase.DSharp.toInt());
+    assertEquals(4, KeyBase.E.toInt());
+    assertEquals(5, KeyBase.F.toInt());
+    assertEquals(6, KeyBase.FSharp.toInt());
+    assertEquals(7, KeyBase.G.toInt());
+    assertEquals(8, KeyBase.GSharp.toInt());
+    assertEquals(9, KeyBase.A.toInt());
+    assertEquals(10, KeyBase.ASharp.toInt());
+    assertEquals(11, KeyBase.B.toInt());
   }
 
 
   @Test
   public void testFromInt() {
-    assertEquals(KeyBase.E, KeyBase.fromInt(0));
-    assertEquals(KeyBase.FSharp, KeyBase.fromInt(1));
-    assertEquals(KeyBase.F, KeyBase.fromInt(2));
-    assertEquals(KeyBase.G, KeyBase.fromInt(3));
-    assertEquals(KeyBase.GSharp, KeyBase.fromInt(4));
-    assertEquals(KeyBase.A, KeyBase.fromInt(5));
-    assertEquals(KeyBase.ASharp, KeyBase.fromInt(6));
-    assertEquals(KeyBase.B, KeyBase.fromInt(7));
-    assertEquals(KeyBase.C, KeyBase.fromInt(8));
-    assertEquals(KeyBase.CSharp, KeyBase.fromInt(9));
-    assertEquals(KeyBase.D, KeyBase.fromInt(10));
-    assertEquals(KeyBase.DSharp, KeyBase.fromInt(11));
+    assertEquals(KeyBase.C, KeyBase.fromInt(0));
+    assertEquals(KeyBase.CSharp, KeyBase.fromInt(1));
+    assertEquals(KeyBase.D, KeyBase.fromInt(2));
+    assertEquals(KeyBase.DSharp, KeyBase.fromInt(3));
+    assertEquals(KeyBase.E, KeyBase.fromInt(4));
+    assertEquals(KeyBase.F, KeyBase.fromInt(5));
+    assertEquals(KeyBase.FSharp, KeyBase.fromInt(6));
+    assertEquals(KeyBase.G, KeyBase.fromInt(7));
+    assertEquals(KeyBase.GSharp, KeyBase.fromInt(8));
+    assertEquals(KeyBase.A, KeyBase.fromInt(9));
+    assertEquals(KeyBase.ASharp, KeyBase.fromInt(10));
+    assertEquals(KeyBase.B, KeyBase.fromInt(11));
   }
 
   @Test
   public void testCreateBowsKey() {
     int[] expected = new int[]{0, 1, 2, 3, 4, 5};
-    assertArrayEquals(expected, KeyBase.createBowsKey("E", "F#", "F", "G", "G#", "A"));
+    assertArrayEquals(expected, KeyBase.createBowsKey("C", "C#", "D", "D#", "E", "F"));
   }
 
   @Test(expected = IllegalArgumentException.class)
@@ -104,11 +104,8 @@ public class KeyBaseTest {
   }
 
   @Test
-  public void testCreateBowsKeyAdditional() {
-    int[] expected = new int[]{0, 1, 2, 3, 4, 5};
-    assertArrayEquals(expected, KeyBase.createBowsKey("E", "F#", "F", "G", "G#", "A"));
-    int[] expected2 = new int[]{7, 8, 9, 10, 11, 0};
-    assertArrayEquals(expected2, KeyBase.createBowsKey("B", "C", "C#", "D", "D#", "E"));
+  public void testFromStringAdditionalCasesGSharp() {
+    assertEquals(KeyBase.GSharp, KeyBase.fromString("G#"));
   }
 
 }

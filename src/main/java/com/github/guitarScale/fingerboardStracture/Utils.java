@@ -1,4 +1,4 @@
-package com.github.guitarScale;
+package com.github.guitarScale.fingerboardStracture;
 
 /**
  * Utility class for various array operations.

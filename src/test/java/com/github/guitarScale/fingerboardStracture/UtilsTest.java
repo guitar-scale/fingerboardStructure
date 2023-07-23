@@ -1,8 +1,6 @@
-package com.github.guitarScale;
+package com.github.guitarScale.fingerboardStracture;
 
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class UtilsTest {
   @Test

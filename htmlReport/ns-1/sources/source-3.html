@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > ScaleBase</title>
+  <title>Coverage Report > Tuning</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -18,10 +18,10 @@
 <div class="breadCrumbs">
 Current scope:     <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">com.github.guitarScale</a>
+    <a href="../index.html">com.github.guitarScale.fingerboardStracture</a>
 </div>
 
-<h1>Coverage Summary for Class: ScaleBase (com.github.guitarScale)</h1>
+<h1>Coverage Summary for Class: Tuning (com.github.guitarScale.scaleStructure)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -40,7 +40,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">ScaleBase</td>
+  <td class="name">Tuning</td>
 <td class="coverageStat">
   <span class="percent">
     100%
@@ -54,7 +54,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     100%
   </span>
   <span class="absValue">
-    (4/4)
+    (5/5)
   </span>
 </td>
 <td class="coverageStat">
@@ -62,7 +62,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     100%
   </span>
   <span class="absValue">
-    (37/37)
+    (26/26)
   </span>
 </td>
 </tr>
@@ -74,76 +74,89 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 
 <pre>
-<code class="sourceCode" id="sourceCode">&nbsp;package com.github.guitarScale;
+<code class="sourceCode" id="sourceCode">&nbsp;package com.github.guitarScale.fingerboardStracture;
 &nbsp;
 &nbsp;import java.util.Arrays;
+&nbsp;import java.util.stream.Collectors;
 &nbsp;
 &nbsp;/**
-&nbsp; * Represents the base scales.
+&nbsp; * Represents the tuning of a guitar.&lt;br&gt;
+&nbsp; * Arguments for each method start with the 6th bow,&lt;br&gt;
+&nbsp; * but the retained index name and string name are the same.
 &nbsp; */
-<b class="fc">&nbsp;public enum ScaleBase {</b>
-<b class="fc">&nbsp;	MitsuruMetal(new int[]{2, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1}),</b>
-<b class="fc">&nbsp;	Aeolian(new int[]{2, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0}),</b>
-<b class="fc">&nbsp;	Altered(new int[]{2, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0}),</b>
-<b class="fc">&nbsp;	Algerian(new int[]{2, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1}),</b>
-<b class="fc">&nbsp;	Blues(new int[]{2, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0}),</b>
-<b class="fc">&nbsp;	BluesPlus(new int[]{2, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1}),</b>
-<b class="fc">&nbsp;	Chromatic(new int[]{2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}),</b>
-<b class="fc">&nbsp;	Diminished(new int[]{2, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1}),</b>
-<b class="fc">&nbsp;	Diminish(new int[]{0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1}),</b>
-<b class="fc">&nbsp;	Dorian(new int[]{2, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0}),</b>
-<b class="fc">&nbsp;	DominantSeven(new int[]{2, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0}),</b>
-<b class="fc">&nbsp;	Diatonic(new int[]{2, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0}),</b>
-<b class="fc">&nbsp;	Egyptian(new int[]{2, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0}),</b>
-<b class="fc">&nbsp;	HarmonicMinor(new int[]{2, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1}),</b>
-<b class="fc">&nbsp;	Hawaiian(new int[]{2, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1}),</b>
-<b class="fc">&nbsp;	Hindu(new int[]{2, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0}),</b>
-<b class="fc">&nbsp;	HeavyMetal(new int[]{2, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0}),</b>
-<b class="fc">&nbsp;	Ionian(new int[]{2, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1}),</b>
-<b class="fc">&nbsp;	Japanese(new int[]{2, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0}),</b>
-<b class="fc">&nbsp;	Lydian(new int[]{2, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1}),</b>
-<b class="fc">&nbsp;	Minor(new int[]{2, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0}),</b>
-<b class="fc">&nbsp;	MelodicMinor(new int[]{2, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1}),</b>
-<b class="fc">&nbsp;	Mixolydian(new int[]{2, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0}),</b>
-<b class="fc">&nbsp;	Major(new int[]{2, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1}),</b>
-<b class="fc">&nbsp;	Pentatonic(new int[]{2, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0}),</b>
-<b class="fc">&nbsp;	Phrygian(new int[]{2, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0}),</b>
-<b class="fc">&nbsp;	Roumanian(new int[]{2, 0, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0}),</b>
-<b class="fc">&nbsp;	Ryukyu(new int[]{2, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1}),</b>
-<b class="fc">&nbsp;	Sobaya(new int[]{2, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0}),</b>
-<b class="fc">&nbsp;	Spanish(new int[]{2, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0}),</b>
-<b class="fc">&nbsp;	Ultralocrian(new int[]{2, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0}),</b>
-<b class="fc">&nbsp;	WholeTone(new int[]{2, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0});</b>
+&nbsp;public class Tuning {
+&nbsp;  private int[] tuning;
 &nbsp;
-&nbsp;	private final int[] structure;
+&nbsp;  /**
+&nbsp;   * Constructs a Tuning with the specified array of notes.
+&nbsp;   *
+&nbsp;   * @param tuning an array of integers representing the tuning of the guitar
+&nbsp;   * @throws IllegalArgumentException if the tuning does not consist of 6 notes
+&nbsp;   */
+<b class="fc">&nbsp;  public Tuning(int[] tuning) {</b>
+<b class="fc">&nbsp;    if (tuning.length != 6) {</b>
+<b class="fc">&nbsp;      throw new IllegalArgumentException(&quot;Tuning must consist of 6 notes.&quot;);</b>
+&nbsp;    }
+<b class="fc">&nbsp;    for(int i = 0; i &lt; tuning.length / 2; i++) {</b>
+<b class="fc">&nbsp;      int temp = tuning[i];</b>
+<b class="fc">&nbsp;      tuning[i] = tuning[tuning.length - i - 1];</b>
+<b class="fc">&nbsp;      tuning[tuning.length - i - 1] = temp;</b>
+&nbsp;    }
+<b class="fc">&nbsp;    this.tuning = tuning;</b>
+&nbsp;  }
 &nbsp;
-&nbsp;	/**
-&nbsp;	 * Constructs a ScaleBase with the specified structure.
-&nbsp;	 *
-&nbsp;	 * @param structure an array representing the structure of the scale
-&nbsp;	 */
-<b class="fc">&nbsp;	ScaleBase(int[] structure) {</b>
-<b class="fc">&nbsp;		this.structure = structure;</b>
-&nbsp;	}
+&nbsp;  /**
+&nbsp;   * Returns the tuning of the guitar.
+&nbsp;   *
+&nbsp;   * @return an array of integers representing the tuning of the guitar
+&nbsp;   */
+&nbsp;  public int[] getTuningStructure() {
+<b class="fc">&nbsp;    return this.tuning;</b>
+&nbsp;  }
 &nbsp;
-&nbsp;	/**
-&nbsp;	 * Returns the structure of the scale.
-&nbsp;	 *
-&nbsp;	 * @return an array representing the structure of the scale
-&nbsp;	 */
-&nbsp;	public int[] getStructure() {
-<b class="fc">&nbsp;		return this.structure;</b>
-&nbsp;	}
+&nbsp;  /**
+&nbsp;   * Returns a Tuning representing the standard tuning of a guitar.
+&nbsp;   *
+&nbsp;   * @return a Tuning representing the standard tuning of a guitar
+&nbsp;   */
+&nbsp;  public static Tuning getStandardTuning() {
+<b class="fc">&nbsp;    return new Tuning(new int[]{</b>
+<b class="fc">&nbsp;        KeyBase.fromString(&quot;E&quot;).toInt(),</b>
+<b class="fc">&nbsp;        KeyBase.fromString(&quot;A&quot;).toInt(),</b>
+<b class="fc">&nbsp;        KeyBase.fromString(&quot;D&quot;).toInt(),</b>
+<b class="fc">&nbsp;        KeyBase.fromString(&quot;G&quot;).toInt(),</b>
+<b class="fc">&nbsp;        KeyBase.fromString(&quot;B&quot;).toInt(),</b>
+<b class="fc">&nbsp;        KeyBase.fromString(&quot;E&quot;).toInt()</b>
+&nbsp;    });
+&nbsp;  }
 &nbsp;
-&nbsp;	/**
-&nbsp;	 * Returns a string representation of the scale.
-&nbsp;	 *
-&nbsp;	 * @return a string representation of the scale
-&nbsp;	 */
-&nbsp;	@Override
-&nbsp;	public String toString() {
-<b class="fc">&nbsp;		return name() + &quot; &quot; + Arrays.toString(structure);</b>
-&nbsp;	}
+&nbsp;  /**
+&nbsp;   * Returns a Tuning representing the DadGad tuning of a guitar.
+&nbsp;   *
+&nbsp;   * @return a Tuning representing the DadGad tuning of a guitar
+&nbsp;   */
+&nbsp;  public static Tuning getDadGad() {
+<b class="fc">&nbsp;    return new Tuning(new int[]{</b>
+<b class="fc">&nbsp;        KeyBase.fromString(&quot;D&quot;).toInt(),</b>
+<b class="fc">&nbsp;        KeyBase.fromString(&quot;A&quot;).toInt(),</b>
+<b class="fc">&nbsp;        KeyBase.fromString(&quot;D&quot;).toInt(),</b>
+<b class="fc">&nbsp;        KeyBase.fromString(&quot;G&quot;).toInt(),</b>
+<b class="fc">&nbsp;        KeyBase.fromString(&quot;A&quot;).toInt(),</b>
+<b class="fc">&nbsp;        KeyBase.fromString(&quot;D&quot;).toInt()</b>
+&nbsp;    });
+&nbsp;  }
+&nbsp;
+&nbsp;  /**
+&nbsp;   * Returns a string representation of the tuning.
+&nbsp;   *
+&nbsp;   * @return a string representation of the tuning
+&nbsp;   */
+&nbsp;  @Override
+&nbsp;  public String toString() {
+<b class="fc">&nbsp;    return Arrays.stream(tuning)</b>
+<b class="fc">&nbsp;        .mapToObj(Integer::toString)</b>
+<b class="fc">&nbsp;        .collect(Collectors.joining(&quot;, &quot;));</b>
+&nbsp;  }
 &nbsp;}
 </code>
 </pre>
@@ -168,7 +181,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2023-07-23 12:01</div>
+    <div style="float:right;">generated on 2023-07-23 15:16</div>
 </div>
 </body>
 </html>

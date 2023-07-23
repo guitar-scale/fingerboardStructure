@@ -1,11 +1,10 @@
-package com.github.guitarScale;
+package com.github.guitarScale.fingerboardStracture;
 
 /**
  * Represents the base keys in music.
  */
 public enum KeyBase {
-  E, FSharp, F, G, GSharp, A, ASharp, B, C, CSharp, D, DSharp;
-//  C, CSharp, D, DSharp, E, FSharp, F, G, GSharp, A, ASharp, B;
+  C, CSharp, D, DSharp, E, F, FSharp, G, GSharp, A, ASharp, B;
 
   /**
    * Returns a string representation of the key.
@@ -19,18 +18,18 @@ public enum KeyBase {
 
   public static KeyBase fromString(String key) {
     switch(key) {
+      case "C": return C;
+      case "C#": return CSharp;
+      case "D": return D;
+      case "D#": return DSharp;
       case "E": return E;
-      case "F#": return FSharp;
       case "F": return F;
+      case "F#": return FSharp;
       case "G": return G;
       case "G#": return GSharp;
       case "A": return A;
       case "A#": return ASharp;
       case "B": return B;
-      case "C": return C;
-      case "C#": return CSharp;
-      case "D": return D;
-      case "D#": return DSharp;
       default: throw new IllegalArgumentException("Invalid key: " + key);
     }
   }

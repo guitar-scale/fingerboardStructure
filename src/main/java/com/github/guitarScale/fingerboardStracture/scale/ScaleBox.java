@@ -1,11 +1,11 @@
-package com.github.guitarScale;
+package com.github.guitarScale.fingerboardStracture.scale;
 
 import java.util.Arrays;
 
 /**
  * Represents the base scales.
  */
-public enum ScaleBase {
+public enum ScaleBox {
 	MitsuruMetal(new int[]{2, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1}),
 	Aeolian(new int[]{2, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0}),
 	Altered(new int[]{2, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0}),
@@ -46,7 +46,7 @@ public enum ScaleBase {
 	 *
 	 * @param structure an array representing the structure of the scale
 	 */
-	ScaleBase(int[] structure) {
+	ScaleBox(int[] structure) {
 		this.structure = structure;
 	}
 
@@ -57,6 +57,15 @@ public enum ScaleBase {
 	 */
 	public int[] getStructure() {
 		return this.structure;
+	}
+
+	/**
+	 * Returns the name of the scale.
+	 *
+	 * @return a string representing the name of the scale
+	 */
+	public String getName() {
+		return name();
 	}
 
 	/**
