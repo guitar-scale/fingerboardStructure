@@ -1,11 +1,7 @@
-package com.github.guitarScale.test;
+package com.github.guitarScale;
 
-import com.github.guitarScale.FingerBoard;
-import com.github.guitarScale.KeyBase;
-import com.github.guitarScale.ScaleBase;
-import com.github.guitarScale.Tuning;
-import org.junit.Test;
 import org.junit.Assert;
+import org.junit.Test;
 
 import static org.junit.Assert.*;
 
@@ -16,16 +12,7 @@ public class FingerBoardTest {
         24,
         KeyBase.A,
         ScaleBase.Minor,
-        new Tuning( // or Tuning.getStandardTuning();
-            new int[]{
-                KeyBase.fromString("E").toInt(),
-                KeyBase.fromString("A").toInt(),
-                KeyBase.fromString("D").toInt(),
-                KeyBase.fromString("G").toInt(),
-                KeyBase.fromString("B").toInt(),
-                KeyBase.fromString("E").toInt()
-            }
-        )
+        Tuning.getStandardTuning()
     );
 
     int[][] expect = {
@@ -46,16 +33,7 @@ public class FingerBoardTest {
         24,
         KeyBase.A,
         ScaleBase.Major,
-        new Tuning( // or Tuning.getStandardTuning();
-            new int[]{
-                KeyBase.fromString("D").toInt(),
-                KeyBase.fromString("A").toInt(),
-                KeyBase.fromString("D").toInt(),
-                KeyBase.fromString("G").toInt(),
-                KeyBase.fromString("B").toInt(),
-                KeyBase.fromString("E").toInt()
-            }
-        )
+        new Tuning(KeyBase.createBowsKey("D", "A", "D", "G", "B", "E"))
     );
 
     String expectStr = "1, 0, 1, 0, 1, 0, 1, 2, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 2, 0, 1, 0, 1, 1, \n" +
@@ -74,17 +52,9 @@ public class FingerBoardTest {
         10, // less than 12
         KeyBase.A,
         ScaleBase.Minor,
-        new Tuning(
-            new int[]{
-                KeyBase.fromString("E").toInt(),
-                KeyBase.fromString("A").toInt(),
-                KeyBase.fromString("D").toInt(),
-                KeyBase.fromString("G").toInt(),
-                KeyBase.fromString("B").toInt(),
-                KeyBase.fromString("E").toInt()
-            }
-        )
+        new Tuning(KeyBase.createBowsKey("E3", "A", "D", "G", "B", "E"))
     );
+    System.out.println(fb);
   }
 
   @Test(expected = IllegalArgumentException.class)
@@ -93,16 +63,7 @@ public class FingerBoardTest {
         33, // greater than 32
         KeyBase.A,
         ScaleBase.Minor,
-        new Tuning(
-            new int[]{
-                KeyBase.fromString("E").toInt(),
-                KeyBase.fromString("A").toInt(),
-                KeyBase.fromString("D").toInt(),
-                KeyBase.fromString("G").toInt(),
-                KeyBase.fromString("B").toInt(),
-                KeyBase.fromString("E").toInt()
-            }
-        )
+        new Tuning(KeyBase.createBowsKey("E", "A", "D", "G", "B", "E"))
     );
   }
 
@@ -112,36 +73,17 @@ public class FingerBoardTest {
         24,
         KeyBase.A,
         ScaleBase.Minor,
-        new Tuning(
-            new int[]{
-                KeyBase.fromString("E").toInt(),
-                KeyBase.fromString("A").toInt(),
-                KeyBase.fromString("D").toInt(),
-                KeyBase.fromString("G").toInt(),
-                KeyBase.fromString("B").toInt(),
-                KeyBase.fromString("E").toInt()
-            }
-        )
+        new Tuning(KeyBase.createBowsKey("E", "A", "D", "G", "B", "E"))
     );
 
     FingerBoard fb2 = new FingerBoard(
         24,
         KeyBase.A,
         ScaleBase.Minor,
-        new Tuning(
-            new int[]{
-                KeyBase.fromString("E").toInt(),
-                KeyBase.fromString("A").toInt(),
-                KeyBase.fromString("D").toInt(),
-                KeyBase.fromString("G").toInt(),
-                KeyBase.fromString("B").toInt(),
-                KeyBase.fromString("E").toInt()
-            }
-        )
+        new Tuning(KeyBase.createBowsKey("E", "A", "D", "G", "B", "E"))
     );
 
     // Test equals
-
     assertTrue(fb1.equals(fb2));
     assertTrue(fb2.equals(fb1));
 
@@ -155,32 +97,14 @@ public class FingerBoardTest {
         24,
         KeyBase.A,
         ScaleBase.Minor,
-        new Tuning(
-            new int[]{
-                KeyBase.fromString("E").toInt(),
-                KeyBase.fromString("A").toInt(),
-                KeyBase.fromString("D").toInt(),
-                KeyBase.fromString("G").toInt(),
-                KeyBase.fromString("B").toInt(),
-                KeyBase.fromString("E").toInt()
-            }
-        )
+        new Tuning(KeyBase.createBowsKey("E", "A", "D", "G", "B", "E"))
     );
 
     FingerBoard fb2 = new FingerBoard(
         24,
         KeyBase.A,
         ScaleBase.Minor,
-        new Tuning(
-            new int[]{
-                KeyBase.fromString("E").toInt(),
-                KeyBase.fromString("A").toInt(),
-                KeyBase.fromString("D").toInt(),
-                KeyBase.fromString("G").toInt(),
-                KeyBase.fromString("B").toInt(),
-                KeyBase.fromString("E").toInt()
-            }
-        )
+        new Tuning(KeyBase.createBowsKey("E", "A", "D", "G", "B", "E"))
     );
 
     FingerBoard fb3 = new FingerBoard(

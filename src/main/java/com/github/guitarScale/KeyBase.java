@@ -5,6 +5,7 @@ package com.github.guitarScale;
  */
 public enum KeyBase {
   E, FSharp, F, G, GSharp, A, ASharp, B, C, CSharp, D, DSharp;
+//  C, CSharp, D, DSharp, E, FSharp, F, G, GSharp, A, ASharp, B;
 
   /**
    * Returns a string representation of the key.
@@ -13,30 +14,9 @@ public enum KeyBase {
    */
   @Override
   public String toString() {
-    switch(this) {
-      case E: return "E";
-      case FSharp: return "F#";
-      case F: return "F";
-      case G: return "G";
-      case GSharp: return "G#";
-      case A: return "A";
-      case ASharp: return "A#";
-      case B: return "B";
-      case C: return "C";
-      case CSharp: return "C#";
-      case D: return "D";
-      case DSharp: return "D#";
-      default: throw new IllegalArgumentException();
-    }
+    return name().replace("Sharp", "#");
   }
 
-  /**
-   * Returns the KeyBase corresponding to the specified string.
-   *
-   * @param key a string representing a key
-   * @return the KeyBase corresponding to the specified string
-   * @throws IllegalArgumentException if the specified string does not represent a valid key
-   */
   public static KeyBase fromString(String key) {
     switch(key) {
       case "E": return E;
@@ -56,6 +36,35 @@ public enum KeyBase {
   }
 
   /**
+   * Creates an array of integers representing the keys of the guitar strings (also known as bows).
+   *
+   * @param bow1 the key of the first string
+   * @param bow2 the key of the second string
+   * @param bow3 the key of the third string
+   * @param bow4 the key of the fourth string
+   * @param bow5 the key of the fifth string
+   * @param bow6 the key of the sixth string
+   * @return an array of integers representing the keys of the guitar strings
+   */
+  public static int[] createBowsKey(
+      String bow1,
+      String bow2,
+      String bow3,
+      String bow4,
+      String bow5,
+      String bow6
+  ) {
+    return new int[]{
+        KeyBase.fromString(bow1).toInt(),
+        KeyBase.fromString(bow2).toInt(),
+        KeyBase.fromString(bow3).toInt(),
+        KeyBase.fromString(bow4).toInt(),
+        KeyBase.fromString(bow5).toInt(),
+        KeyBase.fromString(bow6).toInt()
+    };
+  }
+
+  /**
    * Returns an integer representation of the key.
    *
    * @return an integer representation of the key
@@ -64,13 +73,8 @@ public enum KeyBase {
     return this.ordinal();
   }
 
-  /**
-   * Returns the KeyBase corresponding to the specified integer.
-   *
-   * @param key an integer representing a key
-   * @return the KeyBase corresponding to the specified integer
-   */
   public static KeyBase fromInt(int key) {
     return KeyBase.values()[key];
   }
+
 }

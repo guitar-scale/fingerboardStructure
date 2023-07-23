@@ -37,7 +37,30 @@ public class Tuning {
    * @return a Tuning representing the standard tuning of a guitar
    */
   public static Tuning getStandardTuning() {
-    return new Tuning(new int[]{0, 7, 3, 10, 5, 0});
+    return new Tuning(new int[]{
+        KeyBase.fromString("E").toInt(),
+        KeyBase.fromString("A").toInt(),
+        KeyBase.fromString("D").toInt(),
+        KeyBase.fromString("G").toInt(),
+        KeyBase.fromString("B").toInt(),
+        KeyBase.fromString("E").toInt()
+    });
+  }
+
+  /**
+   * Returns a Tuning representing the DadGad tuning of a guitar.
+   *
+   * @return a Tuning representing the DadGad tuning of a guitar
+   */
+  public static Tuning getDadGad() {
+    return new Tuning(new int[]{
+        KeyBase.fromString("D").toInt(),
+        KeyBase.fromString("A").toInt(),
+        KeyBase.fromString("D").toInt(),
+        KeyBase.fromString("G").toInt(),
+        KeyBase.fromString("A").toInt(),
+        KeyBase.fromString("D").toInt()
+    });
   }
 
   /**

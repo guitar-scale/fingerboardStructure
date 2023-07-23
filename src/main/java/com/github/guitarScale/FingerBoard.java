@@ -8,27 +8,37 @@ import java.util.Arrays;
  * Example usage:
  * <pre>
  * {@code
- * FingerBoard fb = new FingerBoard(
- *     24,
- *     KeyBase.A,
- *     ScaleBase.Minor,
- *     new Tuning(　// or Tuning.getStandardTuning();
- *         new int[]{
- *             KeyBase.fromString("E").toInt(),
- *             KeyBase.fromString("A").toInt(),
- *             KeyBase.fromString("D").toInt(),
- *             KeyBase.fromString("G").toInt(),
- *             KeyBase.fromString("B").toInt(),
- *             KeyBase.fromString("E").toInt()
- *         }
- *     )
- * );
+   FingerBoard fb = new FingerBoard(
+       24,
+       KeyBase.A,
+       ScaleBase.Minor,
+       new Tuning(　// or Tuning.getStandardTuning();
+           new int[]{ // or KeyBase.createBowsKey("E", "A", "D", "G", "B", "E"))
+               KeyBase.fromString("E").toInt(),
+               KeyBase.fromString("A").toInt(),
+               KeyBase.fromString("D").toInt(),
+               KeyBase.fromString("G").toInt(),
+               KeyBase.fromString("B").toInt(),
+               KeyBase.fromString("E").toInt()
+           }
+       )
+   );
  * }
  * </pre>
  */
 public class FingerBoard {
 
-  private int[][] fretboard;
+  private final int[][] fretboard;
+
+//  public static void main(String[] argv) {
+//    FingerBoard fb = new FingerBoard(
+//        24,
+//        KeyBase.A,
+//        ScaleBase.Minor,
+//        new Tuning(KeyBase.createBowsKey("E", "A", "D", "G", "B", "E"))
+//    );
+//    System.out.println(fb);
+//  }
 
   /**
    * Constructs a FingerBoard with the specified number of frets, key base, scale name, and tuning.
@@ -89,6 +99,14 @@ public class FingerBoard {
     return sb.toString();
   }
 
+  /**
+   * Checks if this FingerBoard is equal to the specified object.
+   * <p>
+   * The result is true if and only if the argument is not null and is a FingerBoard object that has the same fretboard structure as this object.
+   *
+   * @param obj the object to compare this FingerBoard against
+   * @return true if the given object represents a FingerBoard equivalent to this FingerBoard, false otherwise
+   */
   @Override
   public boolean equals(Object obj) {
     if (this == obj) {
@@ -101,6 +119,14 @@ public class FingerBoard {
     return Arrays.deepEquals(fretboard, that.fretboard);
   }
 
+  /**
+   * Returns a hash code value for this FingerBoard.
+   * <p>
+   * This method is supported for the benefit of hash tables such as those provided by HashMap.
+   * The hash code is computed based on the fretboard structure of this FingerBoard.
+   *
+   * @return a hash code value for this object
+   */
   @Override
   public int hashCode() {
     return Arrays.deepHashCode(fretboard);

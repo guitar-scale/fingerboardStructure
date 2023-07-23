@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > KeyBase</title>
+  <title>Coverage Report > ScaleBase</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -21,12 +21,15 @@ Current scope:     <a href="../../index.html">all classes</a>
     <a href="../index.html">com.github.guitarScale</a>
 </div>
 
-<h1>Coverage Summary for Class: KeyBase (com.github.guitarScale)</h1>
+<h1>Coverage Summary for Class: ScaleBase (com.github.guitarScale)</h1>
 
 <table class="coverageStats">
-
 <tr>
   <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
 <th class="coverageStat 
 ">
   Method, %
@@ -37,26 +40,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">KeyBase</td>
-<td class="coverageStat">
-  <span class="percent">
-    80%
-  </span>
-  <span class="absValue">
-    (4/5)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    34.4%
-  </span>
-  <span class="absValue">
-    (11/32)
-  </span>
-</td>
-</tr>
-  <tr>
-    <td class="name">KeyBase$1</td>
+  <td class="name">ScaleBase</td>
 <td class="coverageStat">
   <span class="percent">
     100%
@@ -70,29 +54,19 @@ Current scope:     <a href="../../index.html">all classes</a>
     100%
   </span>
   <span class="absValue">
-    (1/1)
-  </span>
-</td>
-  </tr>
-<tr>
-  <td class="name"><strong>Total</strong></td>
-<td class="coverageStat">
-  <span class="percent">
-    83.3%
-  </span>
-  <span class="absValue">
-    (5/6)
+    (4/4)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    36.4%
+    100%
   </span>
   <span class="absValue">
-    (12/33)
+    (37/37)
   </span>
 </td>
 </tr>
+
 </table>
 
 <br/>
@@ -102,79 +76,74 @@ Current scope:     <a href="../../index.html">all classes</a>
 <pre>
 <code class="sourceCode" id="sourceCode">&nbsp;package com.github.guitarScale;
 &nbsp;
+&nbsp;import java.util.Arrays;
+&nbsp;
 &nbsp;/**
-&nbsp; * Represents the base keys in music.
+&nbsp; * Represents the base scales.
 &nbsp; */
-<b class="fc">&nbsp;public enum KeyBase {</b>
-<b class="fc">&nbsp;  E, FSharp, F, G, GSharp, A, ASharp, B, C, CSharp, D, DSharp;</b>
+<b class="fc">&nbsp;public enum ScaleBase {</b>
+<b class="fc">&nbsp;	MitsuruMetal(new int[]{2, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1}),</b>
+<b class="fc">&nbsp;	Aeolian(new int[]{2, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0}),</b>
+<b class="fc">&nbsp;	Altered(new int[]{2, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0}),</b>
+<b class="fc">&nbsp;	Algerian(new int[]{2, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1}),</b>
+<b class="fc">&nbsp;	Blues(new int[]{2, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0}),</b>
+<b class="fc">&nbsp;	BluesPlus(new int[]{2, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1}),</b>
+<b class="fc">&nbsp;	Chromatic(new int[]{2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}),</b>
+<b class="fc">&nbsp;	Diminished(new int[]{2, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1}),</b>
+<b class="fc">&nbsp;	Diminish(new int[]{0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1}),</b>
+<b class="fc">&nbsp;	Dorian(new int[]{2, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0}),</b>
+<b class="fc">&nbsp;	DominantSeven(new int[]{2, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0}),</b>
+<b class="fc">&nbsp;	Diatonic(new int[]{2, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0}),</b>
+<b class="fc">&nbsp;	Egyptian(new int[]{2, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0}),</b>
+<b class="fc">&nbsp;	HarmonicMinor(new int[]{2, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1}),</b>
+<b class="fc">&nbsp;	Hawaiian(new int[]{2, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1}),</b>
+<b class="fc">&nbsp;	Hindu(new int[]{2, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0}),</b>
+<b class="fc">&nbsp;	HeavyMetal(new int[]{2, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0}),</b>
+<b class="fc">&nbsp;	Ionian(new int[]{2, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1}),</b>
+<b class="fc">&nbsp;	Japanese(new int[]{2, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0}),</b>
+<b class="fc">&nbsp;	Lydian(new int[]{2, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1}),</b>
+<b class="fc">&nbsp;	Minor(new int[]{2, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0}),</b>
+<b class="fc">&nbsp;	MelodicMinor(new int[]{2, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1}),</b>
+<b class="fc">&nbsp;	Mixolydian(new int[]{2, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0}),</b>
+<b class="fc">&nbsp;	Major(new int[]{2, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1}),</b>
+<b class="fc">&nbsp;	Pentatonic(new int[]{2, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0}),</b>
+<b class="fc">&nbsp;	Phrygian(new int[]{2, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0}),</b>
+<b class="fc">&nbsp;	Roumanian(new int[]{2, 0, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0}),</b>
+<b class="fc">&nbsp;	Ryukyu(new int[]{2, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1}),</b>
+<b class="fc">&nbsp;	Sobaya(new int[]{2, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0}),</b>
+<b class="fc">&nbsp;	Spanish(new int[]{2, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0}),</b>
+<b class="fc">&nbsp;	Ultralocrian(new int[]{2, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0}),</b>
+<b class="fc">&nbsp;	WholeTone(new int[]{2, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0});</b>
 &nbsp;
-&nbsp;  /**
-&nbsp;   * Returns a string representation of the key.
-&nbsp;   *
-&nbsp;   * @return a string representation of the key
-&nbsp;   */
-&nbsp;  @Override
-&nbsp;  public String toString() {
-<b class="fc">&nbsp;    switch(this) {</b>
-<b class="nc">&nbsp;      case E: return &quot;E&quot;;</b>
-<b class="nc">&nbsp;      case FSharp: return &quot;F#&quot;;</b>
-<b class="nc">&nbsp;      case F: return &quot;F&quot;;</b>
-<b class="nc">&nbsp;      case G: return &quot;G&quot;;</b>
-<b class="nc">&nbsp;      case GSharp: return &quot;G#&quot;;</b>
-<b class="fc">&nbsp;      case A: return &quot;A&quot;;</b>
-<b class="nc">&nbsp;      case ASharp: return &quot;A#&quot;;</b>
-<b class="nc">&nbsp;      case B: return &quot;B&quot;;</b>
-<b class="nc">&nbsp;      case C: return &quot;C&quot;;</b>
-<b class="nc">&nbsp;      case CSharp: return &quot;C#&quot;;</b>
-<b class="nc">&nbsp;      case D: return &quot;D&quot;;</b>
-<b class="nc">&nbsp;      case DSharp: return &quot;D#&quot;;</b>
-<b class="nc">&nbsp;      default: throw new IllegalArgumentException();</b>
-&nbsp;    }
-&nbsp;  }
+&nbsp;	private final int[] structure;
 &nbsp;
-&nbsp;  /**
-&nbsp;   * Returns the KeyBase corresponding to the specified string.
-&nbsp;   *
-&nbsp;   * @param key a string representing a key
-&nbsp;   * @return the KeyBase corresponding to the specified string
-&nbsp;   * @throws IllegalArgumentException if the specified string does not represent a valid key
-&nbsp;   */
-&nbsp;  public static KeyBase fromString(String key) {
-<b class="fc">&nbsp;    switch(key) {</b>
-<b class="fc">&nbsp;      case &quot;E&quot;: return E;</b>
-<b class="nc">&nbsp;      case &quot;F#&quot;: return FSharp;</b>
-<b class="nc">&nbsp;      case &quot;F&quot;: return F;</b>
-<b class="fc">&nbsp;      case &quot;G&quot;: return G;</b>
-<b class="nc">&nbsp;      case &quot;G#&quot;: return GSharp;</b>
-<b class="fc">&nbsp;      case &quot;A&quot;: return A;</b>
-<b class="nc">&nbsp;      case &quot;A#&quot;: return ASharp;</b>
-<b class="fc">&nbsp;      case &quot;B&quot;: return B;</b>
-<b class="nc">&nbsp;      case &quot;C&quot;: return C;</b>
-<b class="nc">&nbsp;      case &quot;C#&quot;: return CSharp;</b>
-<b class="fc">&nbsp;      case &quot;D&quot;: return D;</b>
-<b class="nc">&nbsp;      case &quot;D#&quot;: return DSharp;</b>
-<b class="nc">&nbsp;      default: throw new IllegalArgumentException(&quot;Invalid key: &quot; + key);</b>
-&nbsp;    }
-&nbsp;  }
+&nbsp;	/**
+&nbsp;	 * Constructs a ScaleBase with the specified structure.
+&nbsp;	 *
+&nbsp;	 * @param structure an array representing the structure of the scale
+&nbsp;	 */
+<b class="fc">&nbsp;	ScaleBase(int[] structure) {</b>
+<b class="fc">&nbsp;		this.structure = structure;</b>
+&nbsp;	}
 &nbsp;
-&nbsp;  /**
-&nbsp;   * Returns an integer representation of the key.
-&nbsp;   *
-&nbsp;   * @return an integer representation of the key
-&nbsp;   */
-&nbsp;  public int toInt() {
-<b class="fc">&nbsp;    return this.ordinal();</b>
-&nbsp;  }
+&nbsp;	/**
+&nbsp;	 * Returns the structure of the scale.
+&nbsp;	 *
+&nbsp;	 * @return an array representing the structure of the scale
+&nbsp;	 */
+&nbsp;	public int[] getStructure() {
+<b class="fc">&nbsp;		return this.structure;</b>
+&nbsp;	}
 &nbsp;
-&nbsp;  /**
-&nbsp;   * Returns the KeyBase corresponding to the specified integer.
-&nbsp;   *
-&nbsp;   * @param key an integer representing a key
-&nbsp;   * @return the KeyBase corresponding to the specified integer
-&nbsp;   */
-&nbsp;  public static KeyBase fromInt(int key) {
-<b class="nc">&nbsp;    return KeyBase.values()[key];</b>
-&nbsp;  }
+&nbsp;	/**
+&nbsp;	 * Returns a string representation of the scale.
+&nbsp;	 *
+&nbsp;	 * @return a string representation of the scale
+&nbsp;	 */
+&nbsp;	@Override
+&nbsp;	public String toString() {
+<b class="fc">&nbsp;		return name() + &quot; &quot; + Arrays.toString(structure);</b>
+&nbsp;	}
 &nbsp;}
 </code>
 </pre>
@@ -199,7 +168,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2023-07-22 20:22</div>
+    <div style="float:right;">generated on 2023-07-23 12:01</div>
 </div>
 </body>
 </html>
