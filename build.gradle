@@ -20,6 +20,14 @@ dependencies {
 }
 
 javadoc {
-    title = "GuitarScale"
+    options.locale = 'en_US'
+    title = "guitar-scale::FingerboardStracture"
     source = sourceSets.main.allJava
+    destinationDir = file("docs")
+}
+
+task printLocale {
+    doLast {
+        println Locale.getDefault()
+    }
 }

@@ -11,6 +11,9 @@ The Fingerboard class is a part of the `com.github.guitar-scale.fingerboardStruc
 - Compare the fingerboard with another object.
 - Generate a hash code for the fingerboard.
 
+## class structure
+https://guitar-scale.github.io/fingerboardStructure/
+
 ## Usage
 
 ### Creating a Fingerboard
@@ -90,18 +93,6 @@ You can get a Tuning object representing the standard or DadGad tuning of a guit
 ```
 Tuning standardTuning = Tuning.getStandardTuning();
 Tuning dadGadTuning = Tuning.getDadGad();
-```
-
-## Installation
-
-This package is published on Maven Repository. You can add it to your project by adding the following dependency to your pom.xml file:
-
-```xml
-<dependency>
-  <groupId>com.github.guitar-scale</groupId>
-  <artifactId>FingerboardStructure</artifactId>
-  <version>1.0.0</version>
-</dependency>
 ```
 
 ## License

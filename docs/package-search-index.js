@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"com.github.guitarScale.fingerboardStracture","h":"","u":""},{"l":"com.github.guitarScale.fingerboardStracture.scale","h":"","u":""},{"l":"すべてのパッケージ","h":"","u":"allpackages-index.html"}]
