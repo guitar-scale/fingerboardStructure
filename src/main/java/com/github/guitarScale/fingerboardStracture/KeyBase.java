@@ -4,7 +4,30 @@ package com.github.guitarScale.fingerboardStracture;
  * Represents the base keys in music.
  */
 public enum KeyBase {
-  C, CSharp, D, DSharp, E, F, FSharp, G, GSharp, A, ASharp, B;
+  /** index: 0 */
+  C,
+  /** index: 1 */
+  CSharp,
+  /** index: 2 */
+  D,
+  /** index: 3 */
+  DSharp,
+  /** index: 4 */
+  E,
+  /** index: 5 */
+  F,
+  /** index: 6 */
+  FSharp,
+  /** index: 7 */
+  G,
+  /** index: 8 */
+  GSharp,
+  /** index: 9 */
+  A,
+  /** index: 10 */
+  ASharp,
+  /** index: 11 */
+  B;
 
   /**
    * Returns a string representation of the key.
