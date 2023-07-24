@@ -75,7 +75,16 @@ The Tuning class represents the tuning of a guitar. It provides methods to creat
 You can create a Tuning object by providing an array of integers representing the tuning of the guitar.
 
 ```
-Tuning tuning = new Tuning(new int[]{KeyBase.fromString("E").toInt(), KeyBase.fromString("A").toInt(), KeyBase.fromString("D").toInt(), KeyBase.fromString("G").toInt(), KeyBase.fromString("B").toInt(), KeyBase.fromString("E").toInt()});
+Tuning tuning = new Tuning(
+  new int[]{
+    KeyBase.fromString("E").toInt(),
+    KeyBase.fromString("A").toInt(),
+    KeyBase.fromString("D").toInt(),
+    KeyBase.fromString("G").toInt(),
+    KeyBase.fromString("B").toInt(),
+    KeyBase.fromString("E").toInt()
+  }
+);
 ```
 
 ### Getting the Tuning Structure
@@ -93,6 +102,24 @@ You can get a Tuning object representing the standard or DadGad tuning of a guit
 ```
 Tuning standardTuning = Tuning.getStandardTuning();
 Tuning dadGadTuning = Tuning.getDadGad();
+```
+
+## Installation
+
+### maven
+
+```xml
+<dependency>
+    <groupId>io.github.guitar-scale</groupId>
+    <artifactId>fingerboardStructure</artifactId>
+    <version>1.0</version>
+</dependency>
+```
+
+### gradle
+
+```
+implementation group: 'io.github.guitar-scale', name: 'fingerboardStructure', version: '1.0.2'
 ```
 
 ## License
