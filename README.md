@@ -14,6 +14,24 @@ The Fingerboard class is a part of the `com.github.guitar-scale.fingerboardStruc
 ## class structure
 https://guitar-scale.github.io/fingerboardStructure/
 
+## Installation
+
+### maven
+
+```xml
+<dependency>
+    <groupId>io.github.guitar-scale</groupId>
+    <artifactId>fingerboardStructure</artifactId>
+    <version>1.0.2</version>
+</dependency>
+```
+
+### gradle
+
+```
+implementation group: 'io.github.guitar-scale', name: 'fingerboardStructure', version: '1.0.2'
+```
+
 ## Usage
 
 ### Creating a Fingerboard
@@ -21,10 +39,19 @@ https://guitar-scale.github.io/fingerboardStructure/
 You can create a Fingerboard object by providing the number of frets, key base, scale, and tuning. The number of frets should be between 12 and 32.
 
 ```
+Scale scale = new Scale(ScaleBox.Minor.getName(), ScaleBox.Minor.getStructure());
+Tuning tuning = Tuning.getStandardTuning(); // EADGBE
+Fingerboard fb = new Fingerboard(24, KeyBase.E, scale, tuning);
+```
+
+or
+
+```
 Scale scale = new Scale("myCustomScale", new int[]{2, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1});
 Tuning tuning = new Tuning(KeyBase.createBowsKey("E", "A", "D", "G", "B", "E"));
 Fingerboard fb = new Fingerboard(24, KeyBase.E, scale, tuning);
 ```
+
 
 ### Getting the Structure of the Fingerboard
 
@@ -32,6 +59,15 @@ You can get the structure of the fingerboard, which is represented as a 2D array
 
 ```
 int[][] structure = fb.getStructure();
+
+/* result toString
+2, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 2, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 2, 
+1, 1, 0, 1, 0, 2, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 2, 0, 1, 1, 0, 1, 0, 1, 
+1, 0, 1, 0, 1, 1, 0, 1, 0, 2, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 2, 0, 1, 1, 
+1, 0, 2, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 2, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 
+1, 0, 1, 1, 0, 1, 0, 2, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 2, 0, 1, 1, 0, 1, 
+2, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 2, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 2,
+*/
 ```
 
 ### Getting the Scale of the Fingerboard
@@ -102,24 +138,6 @@ You can get a Tuning object representing the standard or DadGad tuning of a guit
 ```
 Tuning standardTuning = Tuning.getStandardTuning();
 Tuning dadGadTuning = Tuning.getDadGad();
-```
-
-## Installation
-
-### maven
-
-```xml
-<dependency>
-    <groupId>io.github.guitar-scale</groupId>
-    <artifactId>fingerboardStructure</artifactId>
-    <version>1.0</version>
-</dependency>
-```
-
-### gradle
-
-```
-implementation group: 'io.github.guitar-scale', name: 'fingerboardStructure', version: '1.0.2'
 ```
 
 ## License
