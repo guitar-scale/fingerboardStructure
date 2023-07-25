@@ -22,14 +22,14 @@ https://guitar-scale.github.io/fingerboardStructure/
 <dependency>
     <groupId>io.github.guitar-scale</groupId>
     <artifactId>fingerboardStructure</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
 </dependency>
 ```
 
 ### gradle
 
 ```
-implementation group: 'io.github.guitar-scale', name: 'fingerboardStructure', version: '1.0.2'
+implementation group: 'io.github.guitar-scale', name: 'fingerboardStructure', version: '1.0.3'
 ```
 
 ## Usage

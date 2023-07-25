@@ -39,6 +39,13 @@ public enum KeyBase {
     return name().replace("Sharp", "#");
   }
 
+  /**
+   * Converts a given musical key represented as a string into its corresponding enum value.
+   *
+   * @param key the musical key as a string. It should be one of the following: "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B".
+   * @return the corresponding enum value for the given musical key.
+   * @throws IllegalArgumentException if the provided key string does not match any of the valid musical keys.
+   */
   public static KeyBase fromString(String key) {
     switch(key) {
       case "C": return C;
@@ -95,6 +102,13 @@ public enum KeyBase {
     return this.ordinal();
   }
 
+  /**
+   * Converts a given musical key represented as an integer into its corresponding enum value.
+   *
+   * @param key the musical key as an integer. It should be an index corresponding to one of the base keys in music: 0 (C), 1 (C#), 2 (D), 3 (D#), 4 (E), 5 (F), 6 (F#), 7 (G), 8 (G#), 9 (A), 10 (A#), 11 (B).
+   * @return the corresponding enum value for the given musical key.
+   * @throws ArrayIndexOutOfBoundsException if the provided key integer is not within the valid range (0-11).
+   */
   public static KeyBase fromInt(int key) {
     return KeyBase.values()[key];
   }

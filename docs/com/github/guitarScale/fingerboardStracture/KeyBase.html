@@ -267,12 +267,16 @@ extends java.lang.Enum&lt;<a href="KeyBase.html" title="com.github.guitarScale.f
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>static <a href="KeyBase.html" title="com.github.guitarScale.fingerboardStracture内の列挙型">KeyBase</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#fromInt(int)">fromInt</a></span>&#8203;(int&nbsp;key)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Converts a given musical key represented as an integer into its corresponding enum value.</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>static <a href="KeyBase.html" title="com.github.guitarScale.fingerboardStracture内の列挙型">KeyBase</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#fromString(java.lang.String)">fromString</a></span>&#8203;(java.lang.String&nbsp;key)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Converts a given musical key represented as a string into its corresponding enum value.</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>int</code></td>
@@ -537,6 +541,15 @@ for (KeyBase c : KeyBase.values())
 <li class="blockList">
 <h4>fromString</h4>
 <pre class="methodSignature">public static&nbsp;<a href="KeyBase.html" title="com.github.guitarScale.fingerboardStracture内の列挙型">KeyBase</a>&nbsp;fromString&#8203;(java.lang.String&nbsp;key)</pre>
+<div class="block">Converts a given musical key represented as a string into its corresponding enum value.</div>
+<dl>
+<dt><span class="paramLabel">パラメータ:</span></dt>
+<dd><code>key</code> - the musical key as a string. It should be one of the following: "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B".</dd>
+<dt><span class="returnLabel">戻り値:</span></dt>
+<dd>the corresponding enum value for the given musical key.</dd>
+<dt><span class="throwsLabel">例外:</span></dt>
+<dd><code>java.lang.IllegalArgumentException</code> - if the provided key string does not match any of the valid musical keys.</dd>
+</dl>
 </li>
 </ul>
 <a id="createBowsKey(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)">
@@ -586,6 +599,15 @@ for (KeyBase c : KeyBase.values())
 <li class="blockList">
 <h4>fromInt</h4>
 <pre class="methodSignature">public static&nbsp;<a href="KeyBase.html" title="com.github.guitarScale.fingerboardStracture内の列挙型">KeyBase</a>&nbsp;fromInt&#8203;(int&nbsp;key)</pre>
+<div class="block">Converts a given musical key represented as an integer into its corresponding enum value.</div>
+<dl>
+<dt><span class="paramLabel">パラメータ:</span></dt>
+<dd><code>key</code> - the musical key as an integer. It should be an index corresponding to one of the base keys in music: 0 (C), 1 (C#), 2 (D), 3 (D#), 4 (E), 5 (F), 6 (F#), 7 (G), 8 (G#), 9 (A), 10 (A#), 11 (B).</dd>
+<dt><span class="returnLabel">戻り値:</span></dt>
+<dd>the corresponding enum value for the given musical key.</dd>
+<dt><span class="throwsLabel">例外:</span></dt>
+<dd><code>java.lang.ArrayIndexOutOfBoundsException</code> - if the provided key integer is not within the valid range (0-11).</dd>
+</dl>
 </li>
 </ul>
 </li>

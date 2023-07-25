@@ -20,6 +20,7 @@ dependencies {
 }
 
 javadoc {
+    options.addStringOption('Xdoclint:none')
     options.locale = 'en_US'
     title = "guitar-scale::FingerboardStracture"
     source = sourceSets.main.allJava

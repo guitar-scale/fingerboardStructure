@@ -5,7 +5,7 @@
 
     <groupId>io.github.guitar-scale</groupId>
     <artifactId>fingerboardStructure</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.4</version>
     <packaging>jar</packaging>
 
     <name>fingerboardStructure</name>
@@ -22,7 +22,7 @@
     <developers>
         <developer>
             <id>guitarscale</id>
-            <name>mitsu yasuda</name>
+            <name>mitsuru yasuda</name>
             <email>github.guitar.scale@gmail.com</email>
             <organization>individual</organization>
             <organizationUrl>https://github.com/guitar-scale/fingerboardStructure</organizationUrl>
@@ -66,8 +66,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.0</version>
                 <configuration>
-                    <source>8</source>
-                    <target>8</target>
+                    <source>17</source>
+                    <target>17</target>
                 </configuration>
             </plugin>
             <plugin>
@@ -86,7 +86,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.9.1</version>
+                <version>3.3.1</version>
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
@@ -95,6 +95,12 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <docencoding>UTF-8</docencoding>
+                    <charset>UTF-8</charset>
+                    <source>17</source>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
